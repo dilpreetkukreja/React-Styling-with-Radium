@@ -1,12 +1,23 @@
 import React from 'react';
-import './ComponentA.css'
+import Radium from 'radium';
 
 function ComponentA(){
+	let styles = {
+		color: 'green',
+		width:'40%',
+		margin:'auto',
+		':hover': {
+			backgroundColor: 'pink'
+		},
+		'@media screen and (min-width:800px)':{
+			color: 'red'
+		}
+	}
 	return (
-		<div className='border'>
-			<button>ComponentA - Button</button>
+		<div style={styles}>
+			<p>I'm paragraph</p>
 		</div>
 	);
 }
 
-export default ComponentA;
+export default Radium(ComponentA);
